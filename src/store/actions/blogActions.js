@@ -2,13 +2,13 @@ import axios from "axios";
 import { url, setHeaders } from "../../api";
 import { toast } from "react-toastify";
 
-export const getTodos = () => {
+export const getPost = () => {
   return (dispatch) => {
     axios
-      .get(`${url}/todos`, setHeaders())
+      .get(`${url}/post`, setHeaders())
       .then((todos) => {
         dispatch({
-          type: "GET_TODOS",
+          type: "GET_POST",
           todos,
         });
       })
@@ -18,15 +18,15 @@ export const getTodos = () => {
   };
 };
 
-export const addTodo = (newTodo) => {
+export const addPost = (newTodo) => {
   return (dispatch, getState) => {
     const author = getState().auth.name;
     const uid = getState().auth._id;
     axios
-      .post(`${url}/todos`, { ...newTodo, author, uid }, setHeaders())
+      .post(`${url}/post`, { ...newTodo, author, uid }, setHeaders())
       .then((todo) => {
         dispatch({
-          type: "ADD_TODO",
+          type: "ADD_POST",
           todo,
         });
       })
@@ -42,13 +42,13 @@ export const addTodo = (newTodo) => {
 
 };
 
-export const updateTodo = (updatedTodo, id) => {
+export const updatePost = (updatedTodo, id) => {
   return (dispatch) => {
     axios
-      .put(`${url}/todos/${id}`, updatedTodo, setHeaders())
+      .put(`${url}/post/${id}`, updatedTodo, setHeaders())
       .then((todo) => {
         dispatch({
-          type: "UPDATE_TODO",
+          type: "UPDATE_POST",
           todo,
         });
       })
@@ -61,13 +61,13 @@ export const updateTodo = (updatedTodo, id) => {
   };
 };
 
-export const deleteTodo = (id) => {
+export const deletePost = (id) => {
   return (dispatch) => {
     axios
-      .delete(`${url}/todos/${id}`, setHeaders())
+      .delete(`${url}/post/${id}`, setHeaders())
       .then(() => {
         dispatch({
-          type: "DELETE_TODO",
+          type: "DELETE_POST",
           id,
         });
       })
@@ -80,13 +80,13 @@ export const deleteTodo = (id) => {
   };
 };
 
-export const checkTodo = (id) => {
+export const checkPost = (id) => {
   return (dispatch) => {
     axios
-      .patch(`${url}/todos/${id}`, {}, setHeaders())
+      .patch(`${url}/post/${id}`, {}, setHeaders())
       .then((todo) => {
         dispatch({
-          type: "CHECK_TODO",
+          type: "CHECK_POST",
           todo,
         });
       })
