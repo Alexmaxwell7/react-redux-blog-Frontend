@@ -3,6 +3,7 @@ import { Form, Input, Button } from 'antd';
 import { signUp } from "../../store/actions/authActions";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+import { UsergroupAddOutlined,FrownOutlined,EditOutlined } from '@ant-design/icons';
 const layout = {
   labelCol: {
     span: 8,
@@ -68,7 +69,7 @@ const Register = () => {
           },
         ]}
       >
-        <Input />
+        <Input prefix={<UsergroupAddOutlined className="site-form-item-icon" />}/>
       </Form.Item>
       <Form.Item
         label="Username"
@@ -80,7 +81,7 @@ const Register = () => {
           },
         ]}
       >
-        <Input />
+        <Input prefix={<FrownOutlined className="site-form-item-icon"/>}/>
       </Form.Item>
 
       <Form.Item
@@ -93,7 +94,7 @@ const Register = () => {
           },
         ]}
       >
-        <Input.Password />
+        <Input.Password prefix={<EditOutlined className="site-form-item-icon"/>} />
       </Form.Item>
 
       <Form.Item {...tailLayout}>

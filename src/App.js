@@ -18,10 +18,10 @@ function App() {
     dispatch(loadUser());
   }, [dispatch]);
   return (
-   <Layout>
+   <Layout >
     <Router>
       <Headers />
-    {/* <Header style={{backgroundColor:"green"}}> <Headers /></Header> */}
+      
     <Content>
     <Switch>
     <Route  path="/login" component={Login} />
@@ -29,9 +29,12 @@ function App() {
     <Route exact path="/" component={Todos} />
     </Switch>
     </Content>
-    <Footer style={{textAlign:"center",color:"blue"}}>Copy Rights @ Maxwell Blog</Footer>
+    <br />
+    <br />
+    <br />
+    <Footer style={{textAlign:"center",color:"black",fontSize:"30px"}}>Copy Rights @ Maxwell Blog</Footer>
     </Router>
-    
+   
     </Layout>
   );
 }
