@@ -4,6 +4,7 @@ import { signUp } from "../../store/actions/authActions";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { UsergroupAddOutlined,FrownOutlined,EditOutlined } from '@ant-design/icons';
+import './register.css';
 const layout = {
   labelCol: {
     span: 8,
@@ -41,7 +42,7 @@ const Register = () => {
   };
 
   return (
-    <div>
+    <div className="container">
 
       <br/>
       <br/>

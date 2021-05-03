@@ -4,6 +4,7 @@ import { signIn } from "../../store/actions/authActions";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import './login.css';
 const layout = {
   labelCol: {
     span: 8,
@@ -42,7 +43,7 @@ const Login = () => {
   if (auth._id) return <Redirect to ='/'/>
 
   return (
-    <div>
+    <div className="container" >
 
       <br/>
       <br/>

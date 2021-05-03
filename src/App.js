@@ -20,15 +20,12 @@ function App() {
   return (
    <Layout >
     <Router>
-      <Headers />
-      
-    <Content>
+     <Headers />
     <Switch>
     <Route  path="/login" component={Login} />
     <Route  path="/register" component={Register} />
     <Route exact path="/" component={Todos} />
     </Switch>
-    </Content>
     <br />
     <br />
     <br />
